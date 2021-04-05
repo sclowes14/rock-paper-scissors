@@ -18,16 +18,22 @@ function playRound(playerSelection, computerSelection) {
         return 'You tied! Play again.';
     } else if (user === 'ROCK' && computerSelection === 'SCISSORS') {
         return 'You win! Rock beats scissors';
-    } else if (user === 'PAPER' && computerSelction === 'ROCK') {
+    } else if (user === 'PAPER' && computerSelection === 'ROCK') {
         return 'You win! Paper covers rock.';
-    } else if (user === 'SCISSORS' && computerSelction === 'PAPER') {
+    } else if (user === 'SCISSORS' && computerSelection === 'PAPER') {
         return 'You win! Scissors cut paper.';
     } else {
         return 'You lose. Try again.';
     }
 }
 
-const playerSelection = 'rock';
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// Function to play 5 rounds
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt('Rock, paper, scissors, shoot!');
+        let computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
 
+game();
